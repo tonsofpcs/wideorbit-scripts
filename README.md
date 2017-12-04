@@ -12,7 +12,8 @@ This script will move files from the CDCutID folder on your Content Depot recevi
 
 ### Notes
 * Please keep in mind that this script will MOVE the files from the CDCutID folder.
-* If you get a "script cannot be loaded because running scripts is disabled on this system" error, you will probably need to adjust your systems Powershell execution policy. See https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1 for details.
+* If you get a "script cannot be loaded because running scripts is disabled on this system" error, you will probably need to adjust your systems Powershell execution policy. 
+See https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1 for details.
 
 Cheers,
 Al
