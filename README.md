@@ -12,6 +12,9 @@ This script will import files from Content Depot to WideOrbit, and set a custom 
     - Go to the WideOrbit Central Server configuration page
     - Under the "Inventory" tab on the left, click on the "Asset Fields" page
     - Click "Add Asset Field" and create a new Asset Field called "ContentDepotID"
+    ```
+    REMINDER: Make sure that the name of your asset field does NOT include any spaces.
+    ```
     - Click "Submit"
 2. Create the Content Depot categories in WideOrbit. You should create ten new categories: CD0 through CD9
 3. Create a new Automatic Media Asset Importer  rule on your WideOrbit Central Server with the following settings:
