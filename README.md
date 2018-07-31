@@ -11,13 +11,13 @@ This script will import files from Content Depot to WideOrbit, and set a custom 
 1. Create a new custom asset field:
     - Go to the WideOrbit Central Server configuration page
     - Under the "Inventory" tab on the left, click on the "Asset Fields" page
-    - Click "Add Asset Field" and create a new Asset Field called "Content Depot ID"
+    - Click "Add Asset Field" and create a new Asset Field called "ContentDepotID"
     - Click "Submit"
 2. Create the Content Depot categories in WideOrbit. You should create ten new categories: CD0 through CD9
 3. Create a new Automatic Media Asset Importer  rule on your WideOrbit Central Server with the following settings:
     - Name: Content Depot Importer
     - "If File Name Is valid Media Asset number"
-    - "Set Content Depot ID to CDIDHERE"
+    - "Set ContentDepotID to CDIDHERE"
 4. Create a new import directory for the Content Depot audio
 5. Associate the "Content Depot Importer" rule with the import directory you just created
 6. Download the Content Depot Tagger script onto your WideOrbit Central Server.
