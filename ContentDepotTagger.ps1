@@ -24,7 +24,6 @@ while ($true) {
         #ensure that file is not locked
             Try {
                 [IO.File]::OpenWrite($fullname).Close()
-                Break
             }
             Catch { 
                 Write-Host "FILE LOCKED...SKIPPING"
