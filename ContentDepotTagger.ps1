@@ -49,19 +49,6 @@ while ($true) {
             
             $WOImportID = "$wo_category$wo_cartName"
         }
-        start-sleep -Seconds 3
-        #region set the Content Depot ID asset field
-        #get the current metadata
-        $GMA_Body = '<?xml version="1.0" encoding="UTF-8"?><getMediaAssetRequest version="1"><clientId>{0}</clientId><category>{1}</category><cartName>{2}</cartName></getMediaAssetRequest>' -f $wo_clientID,$wo_category,$wo_cartName
-        $GMA_Reply = [xml](Invoke-WebRequest -Uri $wo_uri -Method POST -ContentType "text/xml" -Body $GMA_Body)
-        #Set the Content Depot ID
-        $GMA_Reply.getMediaAssetReply.mediaAsset.audioMetadata.metadata.ContentDepotID = "$ContentDepotID"
-        #Update the media asset metadata
-        $UMA_Body = "<?xml version=`"1.0`" encoding=`"utf-8`" standalone=`"yes`"?><updateMediaAssetRequest version=`"1`">$($GMA_Reply.getMediaAssetReply.mediaAsset.Outerxml)</updateMediaAssetRequest>"
-        $UMA_Reply = [xml](Invoke-WebRequest -Uri $wo_uri -Method POST -ContentType "text/xml" -Body $UMA_Body)
-        #endregion
-
-
         Write-Host "Imported and tagged $MediaAssetID..."
     }
     Write-Host "WAITING FOR FILE..."
