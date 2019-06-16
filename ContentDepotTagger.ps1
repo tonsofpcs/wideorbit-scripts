@@ -1,6 +1,9 @@
+# WideOrbit CD Tagger, original by Al Reynolds
+# Updated 2019-06-16 Eric Adler
 #region Variables
 $CD_source_folder = "C:\CDAudio"
 $wideorbit_CD_import_folder = "C:\IMPORT\CD"
+$prefix = "PS"
 $wo_clientID = [guid]::NewGuid()
 $wo_clientID = "$env:computername---$wo_clientID" 
 $wo_ip = "127.0.0.1"
@@ -15,7 +18,7 @@ while ($true) {
     $files = Get-ChildItem $CD_source_folder -File
     foreach ($file in $files) {
         $ContentDepotID = $file.BaseName
-        $MediaAssetID = "CD$ContentDepotID"
+        $MediaAssetID = "$prefix$ContentDepotID"
     Write-Host "GO"
         $fullname = $file.FullName
         #ensure that file is not locked
