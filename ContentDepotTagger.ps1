@@ -19,19 +19,17 @@ while ($true) {
     foreach ($file in $files) {
         $ContentDepotID = $file.BaseName
         $MediaAssetID = "$prefix$ContentDepotID"
-    Write-Host "GO"
+        Write-Host "GO"
         $fullname = $file.FullName
         #ensure that file is not locked
-        While ($True) {
             Try {
                 [IO.File]::OpenWrite($fullname).Close()
                 Break
             }
             Catch { 
-                Write-Host "FILE LOCKED...WAITING"
-                Start-Sleep -Seconds 1
+                Write-Host "FILE LOCKED...SKIPPING"
+                Continue
             }
-        }
 
         $destfile = "$wideorbit_CD_import_folder\$MediaAssetID.wav"
         Move-Item -Path $fullname -Destination $destfile 
